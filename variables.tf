@@ -53,6 +53,7 @@ variable "ami_id" {
 variable "ec2_key_pair_name" {
   description = "An existing EC2 key pair used to access the bastion server."
   type        = string
+  default     = "consul"
 }
 
 # Allowed Traffic into the Bastion
@@ -79,4 +80,21 @@ variable "allowed_traffic_cidr_blocks_ipv6" {
   description = "List of IPv6 CIDR blocks allowed to send requests to your consul server endpoint.  Defaults to EVERYWHERE."
   type        = list(string)
   default     = ["::/0"]
+}
+
+variable "consul_clients" {
+  type        = number
+  default     = 2
+  description = "number of Consul instances"
+}
+
+variable "zones" {
+  type        = list(string)
+  default     = ["us-east-1a","us-east-1b","us-east-1c"]
+}
+
+variable "consul_servers" {
+  type        = number
+  default     = 2
+  description = "number of Consul instances"
 }

@@ -23,3 +23,12 @@ data "aws_availability_zones" "available" {
 data "aws_region" "current" {}
 
 data "aws_caller_identity" "current" {}
+
+data "aws_vpc" "consul_vpc" {
+  id = aws_vpc.consul.id
+}
+
+# data source for subnet ids in VPC
+data "aws_subnet_ids" "default" {
+  vpc_id = data.aws_vpc.consul_vpc.id
+}

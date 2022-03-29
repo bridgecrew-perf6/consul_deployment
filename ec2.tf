@@ -1,4 +1,6 @@
 #bastion host template
+/*
+
 resource "aws_instance" "bastion" {
   ami                         = var.ami_id #variable AMI ID
   instance_type               = "t3.micro"
@@ -32,6 +34,7 @@ resource "aws_instance" "consul_server" {
   }))
 }
 #Consul client template
+
 resource "aws_instance" "consul_client" {
   ami                    = var.ami_id
   instance_type          = "t3.small"
@@ -50,3 +53,5 @@ resource "aws_instance" "consul_client" {
     PROJECT_VALUE = var.main_project_tag
   }))
 }
+
+*/

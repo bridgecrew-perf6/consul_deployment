@@ -53,9 +53,10 @@ resource "aws_lb_listener" "alb_http" {
 }
 
 ## Target Group Attachment
-
+/*
 resource "aws_lb_target_group_attachment" "consul_server" {
   target_group_arn = aws_lb_target_group.alb_targets.arn
   target_id        = aws_instance.consul_server.id
   port             = 8500
 }
+*/
